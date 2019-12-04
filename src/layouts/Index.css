@@ -1,0 +1,90 @@
+.mainHea {
+  text-align: center;
+  padding: 0;
+  height: 60px;
+  line-height: 60px;
+  text-align: left;
+}
+body {
+  background: #f0f2f5;
+}
+.mainHeaLeft {
+  float: left;
+}
+.mainHeaLeft > div {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.mainHeaLeft > div:hover {
+  background-color: #1890ff;
+  color: white;
+}
+.mainHeaLeft > div:active {
+  background-color: #0076e4;
+}
+.mainHeaRight {
+  float: right;
+  color: #fff;
+  padding-right: 20px;
+}
+.mainHeaRight > div {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.mainHeaRight > div:hover {
+  color: white;
+}
+.mainFoot {
+  background-color: #464c5b;
+  color: #ccc;
+  text-align: center;
+  padding: 0;
+  height: 60px;
+  line-height: 60px;
+}
+.logo {
+  float: left;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px;
+  color: #1890ff;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.logo img {
+  height: 40px;
+}
+:global .ant-pagination-total-text {
+  float: left;
+}
+:global .ant-layout-header .avatar {
+  margin: calc((45px - 24px) / 2);
+  background: rgba(255, 255, 255, 0.85);
+  vertical-align: top;
+}
+.subMenu {
+  text-align: left;
+  padding: 20px;
+  padding-left: 48px;
+  color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+.leftBg {
+  width: 200px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #001529;
+  top: 0;
+  z-index: 0;
+}
+@media screen and (max-width: 1200px) {
+  .leftBg {
+    width: 80px;
+  }
+}

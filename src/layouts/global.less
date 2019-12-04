@@ -1,0 +1,305 @@
+.row {
+	:global {
+
+		.ant-row-flex,
+		.ant-row-flex>div {
+			margin-bottom: 8px;
+		}
+
+		.ant-row,
+		.ant-row>div {
+			margin-bottom: 8px;
+		}
+	}
+}
+
+.form {
+	:global {
+		.ant-form-item {
+			margin-bottom: 8px;
+		}
+
+		.ant-form-item-children>label {
+			margin-left: 10px;
+			color: rgb(131, 130, 130);
+		}
+	}
+}
+
+.modalTree {
+	:global {
+		.ant-tree {
+			max-height: 600px;
+			overflow-y: auto;
+		}
+	}
+}
+
+ul,
+li,
+a {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+input{
+	line-height: 1 !important;
+}
+.searchForm {
+	overflow: auto;
+
+	li {
+		float: left;
+		margin-right: 30px;
+		margin-bottom: 20px;
+		height: 40px;
+		input[type=text],
+		.ant-select {
+			width: 200px
+		}
+
+		span {
+			display: inline-block;
+		}
+
+		&:last-child {
+			padding-top: 4px;
+		}
+	}
+}
+
+.main {
+	margin: 20px;
+}
+
+.btnWrapper {
+	text-align: right;
+	position: fixed;
+	background: #fff;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	padding: 8px 10px;
+	box-sizing: border-box;
+	button {
+		margin: 0 10px;
+	}
+}
+
+.viewCount {
+	overflow: auto;
+
+	li {
+		float: left;
+		text-align: right;
+		padding: 0 35px;
+		border-right: 1px solid rgba(0, 0, 0, .1);
+
+		span {
+			display: block;
+			font-size: 30px;
+			font-weight: normal;
+			color: #000;
+		}
+	}
+}
+
+.systemList {
+	overflow: auto;
+	border-left: 1px solid #f0f0f0;
+	border-top: 1px solid #f0f0f0;
+
+	li {
+		float: left;
+		width: 33.333%;
+		min-width: 200px;
+		padding: 20px;
+		height: 150px;
+		border: 1px solid #f0f0f0;
+		margin-left: -1px;
+		margin-top: -1px;
+		background: #fdfdfd;
+		position: relative;
+
+		&:hover {
+			background: #fbfbfb;
+		}
+
+		a {
+			margin-right: 20px;
+		}
+
+		div {
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			color: #ababab;
+		}
+	}
+}
+
+.selectPower {
+	padding-top: 20px;
+	overflow: auto;
+
+	div {
+		float: left;
+
+		&:nth-child(2) {
+			padding-left: 15px;
+			position: relative;
+			top: -8px;
+		}
+	}
+}
+
+.itemListLabel {
+	text-align: right;
+	padding: 12px;
+	color: #000;
+}
+
+.itemListContent {
+	text-align: left;
+	padding: 12px;
+}
+
+.itemList {
+	border-bottom: 1px dashed #f0f0f0;
+}
+
+@media screen and (max-width: 767px) {
+	.itemListLabel {
+		text-align: left;
+		padding: 0;
+		margin-bottom: 5px;
+	}
+
+	.itemListContent {
+		padding: 0;
+	}
+
+	.itemList {
+		padding: 10px 0;
+	}
+}
+
+.pointList {
+	padding-bottom: 15px;
+	margin-bottom:15px;
+	border-bottom: 1px solid #f0f0f0;
+	&:last-child {
+		border-bottom: 0;
+		margin: 0;
+		padding: 0;
+	}
+	.itemList {
+		&:last-child {
+			border: 0
+		}
+	}
+}
+.imgList{
+	display: inline-block;
+	margin-right: 10px;
+	width: 50px;
+	height: 50px;
+}
+.tabImg{
+	overflow: auto;
+}
+.itemImg{
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	float:left;
+	text-align: center;
+	img{
+		border: 1px solid #ebebeb;
+		width: 50px;
+		height: 50px;
+	}
+	i{
+		font-size: 25px;
+		margin-top: 10px;
+		margin-left: 3px;
+	}
+}
+
+.aList{
+	margin-right: 20px;
+}
+
+.grayFont {
+	color: rgba(0,0,0,.2);
+}
+
+.previewVideo{
+	max-height: 500px;
+	max-width: 100%;
+	margin: auto;
+	padding: 15px;
+}
+.searchButton {
+	padding-top: 5px;
+	text-align: right;
+}
+.closeBtn{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 21px;
+	color: #666;
+}
+.helpCenter{
+	padding: 30px;
+	background: #fff;
+	overflow: auto;
+}
+.helpLeft{
+	width:200px;
+	float: left;
+	font-size: 14px;
+}
+.helpRight{
+	line-height: 25px;
+	overflow: auto;
+	min-height: 200px;
+	border-left: 1px solid #ebebeb;
+	padding-left: 40px;
+	ul{
+		margin-bottom: 30px;
+	}
+	h3 {
+		margin-top: 5px;
+	}
+	dd {
+		padding-left: 25px;
+		margin: 0;
+		div{
+			padding-left: 15px;
+		}
+	}
+	img {
+		width: 800px;
+		display: block;
+		margin: 10px 0 20px 25px;
+	}
+}
+.ant-layout-content{
+	flex: 1 !important;
+}
+
+.tempDiv {
+  background: linear-gradient(white, white) padding-box,
+    repeating-linear-gradient(45deg, transparent 0, transparent 25%, black 0, black 50%) !important;
+  background-size: 10px 10px !important;
+  border: 1px solid transparent !important;
+  animation: antsAnime 4000s linear infinite;
+}
+@keyframes antsAnime {
+  to {
+    background-position: 100000%;
+  }
+}
