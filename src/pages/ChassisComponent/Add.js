@@ -415,7 +415,6 @@ class ChassisSystemAdd extends Component {
                 </Select>
               )}
             </Form.Item>
-
             {typeId === 2 || typeId === 3
               ? <Form.Item {...formItemLayout}
                   label="选择系统"
@@ -518,6 +517,17 @@ class ChassisSystemAdd extends Component {
             >
               {getFieldDecorator('partDescription', {initialValue: dataSource.partDescription})(<TextArea rows={4}/>)}
             </Form.Item >
+            {typeId === 3 ? null :
+              <Fragment>
+                  <Form.Item
+                      {...formItemLayout}
+                      label="排序"
+                  >
+                {getFieldDecorator('sort', {initialValue: dataSource.sort})(<Input style={{width: 100}} />)}
+                </Form.Item>
+              </Fragment>
+            }
+
             <Form.Item {...formItemLayout}
                 label="标准、原理、基于标准的具体化数据参数"
             >

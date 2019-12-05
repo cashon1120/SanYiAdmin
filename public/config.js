@@ -33,6 +33,6 @@ export const searchLayout = {
 export const API_URL = '/api/'
 
 // 图片上传地址
-export const UPLOAD_URL = 'http://10.13.136.28:8124/api/upload/file'
+// export const UPLOAD_URL = 'http://10.13.136.28:8124/api/upload/file'
 
-// export const UPLOAD_URL = 'http://192.168.10.11:8082/upload/file'
+export const UPLOAD_URL = 'http://192.168.10.11:8082/upload/file'

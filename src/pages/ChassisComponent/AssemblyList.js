@@ -83,11 +83,11 @@ class AssemblyParts extends Component {
     name: 'picture',
     render: picture => <ItemView files={picture} />
   },
-  // {
-  //   title: '描述',
-  //   dataIndex: 'partDescription',
-  //   name: 'partDescription'
-  // },
+  {
+    title: '排序',
+    dataIndex: 'sort',
+    name: 'sort'
+  },
   {
     title: '附件',
     dataIndex: 'failureModeAttachment',

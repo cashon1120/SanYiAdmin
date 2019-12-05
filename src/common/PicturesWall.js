@@ -153,7 +153,7 @@ class PicturesWall extends React.Component {
       // 屏蔽鼠标右键和中键点击
       if (e.button !== 0) return;
       const touchdom = e.target;
-      // 长按才能拖动, 以免误操作, 长按时间为 300ms
+      // 长按才能拖动, 以免误操作, 长按时间为 100ms
       let delayTimer = null;
       // canDrag: 是否能拖动当前目标, i svg path 当用户点击预览和删除时不执行拖动
       let canDrag =
@@ -180,7 +180,7 @@ class PicturesWall extends React.Component {
         dom.style.opacity = 0.5;
         uploadContainer.insertBefore(tempDiv, dom.nextSibling);
         isDown = true;
-      }, 300);
+      }, 100);
       // 获取当前拖动目标索引
       const itemList = uploadContainer.querySelectorAll('.ant-upload-list-item');
       const lists = Array.from(itemList);
@@ -298,14 +298,19 @@ class PicturesWall extends React.Component {
       fileList,
       multiple: true,
       accept: acceptType || '.jpg, .gif, .jpeg, .png, .mp4',
-      listType: listType || 'picture-card'
+      listType: listType || 'picture-card',
+      headers: {
+        'sany-token': localStorage.getItem('token') || ''
+      }
     }
     return (
-      <div className="clearfix">{} < Upload
+      <div className="clearfix"
+          style={{userSelect: 'none'}}
+      >{} < Upload
           {
         ...props}
           disabled={disabled}
-                                   > {listType === 'text'
+          >{listType === 'text'
           ? uploadFileButton
           : fileList.length >= maxImgLen
             ? null

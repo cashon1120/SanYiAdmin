@@ -72,7 +72,12 @@ class ChassisPartList extends Component {
       width: 300,
       dataIndex: 'partDescription',
       name: 'partDescription'
-    }, {
+    },
+    {
+      title: '排序',
+      dataIndex: 'sort',
+      name: 'sort'
+    },{
       title: '附件',
       width: 80,
       dataIndex: 'failureModeAttachment',
