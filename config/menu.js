@@ -11,8 +11,7 @@ export default [
         key: 'chassisSystem',
         name: '底盘系统',
         icon: 'car',
-        childs: [
-            {
+        childs: [{
                 key: 'electricSystem',
                 name: '电气系统',
                 url: '/chassisSystem/8',
@@ -68,8 +67,7 @@ export default [
         key: 'nameStore',
         name: '码表管理',
         icon: 'database',
-        childs: [
-            {
+        childs: [{
                 key: 'pointCheckCar',
                 name: '车型名称库',
                 url: '/nameStore/PointCheckCar',
@@ -132,6 +130,11 @@ export default [
         name: '系统管理',
         icon: 'setting',
         childs: [{
+                key: 'characterManager',
+                name: '角色管理',
+                url: '/systemManager/characterManager',
+                realUrl: './systemManager/CharacterManager'
+            }, {
                 key: 'characterManager',
                 name: '角色管理',
                 url: '/systemManager/characterManager',

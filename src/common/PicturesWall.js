@@ -24,7 +24,6 @@ const setFileList = (dataSource, maxImgLen) => {
       fileListArr = dataSource;
     }
   }
-
   // 给传进来的数据加上一个key
   fileListArr.forEach((item, index) => {
     if(item.url){

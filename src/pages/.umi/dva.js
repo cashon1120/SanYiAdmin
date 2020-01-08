@@ -27,6 +27,7 @@ app.model({ namespace: 'chassisComponent', ...(require('/Users/cashon/Documents/
 app.model({ namespace: 'chassisSystem', ...(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/src/models/chassisSystem.js').default) });
 app.model({ namespace: 'departmentManager', ...(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/src/models/departmentManager.js').default) });
 app.model({ namespace: 'importantParts', ...(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/src/models/importantParts.js').default) });
+app.model({ namespace: 'indexBanner', ...(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/src/models/indexBanner.js').default) });
 app.model({ namespace: 'login', ...(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/src/models/login.js').default) });
 app.model({ namespace: 'pointCheckCar', ...(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/src/models/pointCheckCar.js').default) });
 app.model({ namespace: 'pointCheckProject', ...(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/src/models/pointCheckProject.js').default) });

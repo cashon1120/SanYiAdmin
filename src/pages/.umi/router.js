@@ -384,15 +384,27 @@ const routes = [
             "exact": true
           },
           {
-            "name": "帮助中心",
-            "path": "/systemManager/HelpCenter",
+            "name": "首页配置",
+            "path": "/systemManager/IndexBanner",
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import(/* webpackChunkName: "p__SystemManager__HelpCenter" */'../SystemManager/HelpCenter'),
+      component: () => import(/* webpackChunkName: "p__SystemManager__IndexBanner" */'../SystemManager/IndexBanner'),
       
     })
-    : require('../SystemManager/HelpCenter').default,
+    : require('../SystemManager/IndexBanner').default,
+            "exact": true
+          },
+          {
+            "name": "资源管理",
+            "path": "/systemManager/ResourcesManager",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "p__SystemManager__ResourcesManager" */'../SystemManager/ResourcesManager'),
+      
+    })
+    : require('../SystemManager/ResourcesManager').default,
             "exact": true
           },
           {

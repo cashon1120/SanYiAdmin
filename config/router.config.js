@@ -176,16 +176,21 @@ export default [{
 						path: '/systemManager/powerManager',
 						component: './SystemManager/PowerManager'
 					},
-					// {
-					// 	name: '资源管理',
-					// 	path: '/systemManager/ResourcesManager',
-					// 	component: './SystemManager/ResourcesManager'
-					// },
 					{
-						name: '帮助中心',
-						path: '/systemManager/HelpCenter',
-						component: './SystemManager/HelpCenter'
+						name: '首页配置',
+						path: '/systemManager/IndexBanner',
+						component: './SystemManager/IndexBanner'
+					},
+					{
+						name: '资源管理',
+						path: '/systemManager/ResourcesManager',
+						component: './SystemManager/ResourcesManager'
 					}
+					// {
+					// 	name: '帮助中心',
+					// 	path: '/systemManager/HelpCenter',
+					// 	component: './SystemManager/HelpCenter'
+					// }
 				]
 			},
 			{

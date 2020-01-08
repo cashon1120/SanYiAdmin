@@ -501,7 +501,7 @@ class ChassisSystemAdd extends Component {
                   }
                 ]
               })(<PicturesWall
-                  canDrag={1}
+                  canDrag={typeId === 3 ? 0 : 1}
                   dataSource={picture}
                   form={form}
                   maxImgLen={12}

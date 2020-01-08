@@ -7,7 +7,7 @@ import {
 } from 'antd'
 import PicturesWall from '@/common/PicturesWall'
 import { getUploadedPic } from '@/utils/utils'
-import { formItemLayout } from '../../../public/config'
+import { formItemLayout2 } from '../../../public/config'
 
 const FormItem = Form.Item
 const acceptType = '.doc, .docx, .docm, .xls, .xlsx, .xlsm, .pdf, .ppt, .pptx'
@@ -105,7 +105,7 @@ componentWillReceiveProps(nextProps) {
     return (
       <div name="车身系统">
         <Form onSubmit={this.handleSubmit}>
-          <FormItem {...formItemLayout}
+          <FormItem {...formItemLayout2}
               label="DFMEA报告"
           >
             {getFieldDecorator('fileList_DFMEA', {})(
@@ -125,7 +125,7 @@ componentWillReceiveProps(nextProps) {
             }}
             >支持扩展名：doc .docx .pdf</span>
           </FormItem>
-          <FormItem {...formItemLayout}
+          <FormItem {...formItemLayout2}
               label="设计规范报告"
           >
             {getFieldDecorator('fileList_DesignCode', {})(
@@ -145,7 +145,7 @@ componentWillReceiveProps(nextProps) {
             }}
             >支持扩展名：doc .docx .pdf</span>
           </FormItem>
-          <FormItem {...formItemLayout}
+          <FormItem {...formItemLayout2}
               label={type === 1 ? '行业趋势报告' : '型谱'}
           >
             {getFieldDecorator('fileList_Trade', {})(
@@ -165,7 +165,7 @@ componentWillReceiveProps(nextProps) {
             }}
             >支持扩展名：doc .docx .pdf</span>
           </FormItem>
-          <FormItem {...formItemLayout}
+          <FormItem {...formItemLayout2}
               label="法规标准报告"
           >
             {getFieldDecorator('fileList_Regulation', {})(
@@ -185,7 +185,7 @@ componentWillReceiveProps(nextProps) {
             }}
             >支持扩展名：doc .docx .pdf</span>
           </FormItem>
-          <FormItem {...formItemLayout}
+          <FormItem {...formItemLayout2}
               label="质量分析报告"
           >
             {getFieldDecorator('fileList_QualityAnalysis', {})(
@@ -207,8 +207,8 @@ componentWillReceiveProps(nextProps) {
           </FormItem>
 
             <Row>
-              <Col {...formItemLayout.labelCol}></Col>
-              <Col {...formItemLayout.wrapperCol}>
+              <Col {...formItemLayout2.labelCol}></Col>
+              <Col {...formItemLayout2.wrapperCol}>
                     <Button
                         htmlType="submit"
                         loading={loading}
