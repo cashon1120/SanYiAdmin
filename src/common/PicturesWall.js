@@ -1,7 +1,7 @@
 import React from 'react'
 import {Upload, Icon, Modal, Button, message} from 'antd'
 import styles from '../layouts/global.less'
-import {UPLOAD_URL} from '../../public/config'
+import {UPLOAD_URL, BANNER_UPLOAD_URL} from '../../public/config'
 import VideoImg from '../assets/imgs/video.png'
 
 
@@ -278,7 +278,7 @@ class PicturesWall extends React.Component {
 
   render() {
     const {previewVisible, previewImage, previewType, fileList, maxImgLen} = this.state;
-    const {acceptType, disabled, listType} = this.props
+    const {acceptType, disabled, listType, isBanner} = this.props
     const uploadButton = (
       <div>
         <Icon type="plus"/>
@@ -290,8 +290,9 @@ class PicturesWall extends React.Component {
         <Icon type="upload"/>点击上传
       </Button>
     )
+
     const props = {
-      action: UPLOAD_URL,
+      action: isBanner ? BANNER_UPLOAD_URL : UPLOAD_URL,
       onPreview: this.handlePreview,
       onChange: this.handleChange,
       fileList,

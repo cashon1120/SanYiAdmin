@@ -90,7 +90,7 @@ class IndexBanner extends Component {
 
 
             <Form.Item {...formItemLayout}
-                label={`${name}图片/视频`}
+                label={'上传图片'}
             >
               {getFieldDecorator('picture', {
                 rules: [
@@ -103,6 +103,7 @@ class IndexBanner extends Component {
                   canDrag={0}
                   dataSource={picture}
                   form={form}
+                  isBanner
                   maxImgLen={1}
                   name="picture"
                   onChange={this.handlePicChange}

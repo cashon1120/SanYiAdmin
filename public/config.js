@@ -49,3 +49,4 @@ export const API_URL = '/api/'
 
 // 图片上传地址
 export const UPLOAD_URL = '/api/upload/file'
+export const BANNER_UPLOAD_URL = '/api/upload/uploadConfPic'

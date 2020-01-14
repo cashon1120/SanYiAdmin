@@ -408,6 +408,18 @@ const routes = [
             "exact": true
           },
           {
+            "name": "帮助中心",
+            "path": "/systemManager/HelpCenter",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "p__SystemManager__HelpCenter" */'../SystemManager/HelpCenter'),
+      
+    })
+    : require('../SystemManager/HelpCenter').default,
+            "exact": true
+          },
+          {
             "component": () => React.createElement(require('/Users/cashon/Documents/work/sany_knowledge_solution/sany_knowledge_solution/front/node_modules/_umi-build-dev@1.10.7@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]

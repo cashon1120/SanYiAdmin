@@ -185,12 +185,12 @@ export default [{
 						name: '资源管理',
 						path: '/systemManager/ResourcesManager',
 						component: './SystemManager/ResourcesManager'
+					},
+					{
+						name: '帮助中心',
+						path: '/systemManager/HelpCenter',
+						component: './SystemManager/HelpCenter'
 					}
-					// {
-					// 	name: '帮助中心',
-					// 	path: '/systemManager/HelpCenter',
-					// 	component: './SystemManager/HelpCenter'
-					// }
 				]
 			},
 			{

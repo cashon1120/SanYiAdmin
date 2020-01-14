@@ -5,6 +5,7 @@ import {router, Link} from '../common/Plugins'
 import {connect} from 'dva'
 import styles from './Index.less'
 import ModalFrom from '../common/ModalForm'
+import logo from '../assets/imgs/logo.png'
 import { formatTreeNode } from '../utils/utils'
 
 const { Header, Sider, Content } = Layout
@@ -314,7 +315,7 @@ class BasicLayout extends Component {
           >
               <div
                   className={styles.logo}
-              >三一车辆设计经验数据平台</div>
+              ><img src={logo} />三一车辆设计经验数据平台</div>
             <div className={styles.mainHeaRight}>
               <Link style={{color:'#fff', marginRight:30}}
                   to="/systemManager/HelpCenter"
