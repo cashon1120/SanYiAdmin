@@ -16,6 +16,7 @@ export default {
 	proxy: {
 		'/api/': {
 			target: 'http://ymhx.f3322.net:8124/api/',
+			// target: 'http://192.168.10.11:8082',
 			changeOrigin: true,
 			pathRewrite: {
 				'^/api': ''

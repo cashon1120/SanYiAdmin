@@ -10,7 +10,7 @@ import { getUploadedPic } from '@/utils/utils'
 import { formItemLayout2 } from '../../../public/config'
 
 const FormItem = Form.Item
-const acceptType = '.doc, .docx, .docm, .xls, .xlsx, .xlsm, .pdf, .ppt, .pptx'
+const acceptType = '.doc, .docx, .docm, .xls, .xlsx, .xlsm, .pdf .ppt, .pptx'
 @Form.create()
 
 class BodyworkSystemAccessory extends Component {
@@ -20,8 +20,7 @@ class BodyworkSystemAccessory extends Component {
       fileList_DFMEA: [],
       fileList_DesignCode: [],
       fileList_Trade: [],
-      fileList_Regulation: [],
-      fileList_QualityAnalysis: []
+      fileList_Regulation: []
     }
   }
 
@@ -36,8 +35,7 @@ componentWillReceiveProps(nextProps) {
       fileList_DFMEA: [],
       fileList_DesignCode: [],
       fileList_Trade: [],
-      fileList_Regulation: [],
-      fileList_QualityAnalysis: []
+      fileList_Regulation: []
     }
     dataSource.map(item => {
       switch(item.businessType){
@@ -52,10 +50,7 @@ componentWillReceiveProps(nextProps) {
           break
         case 4:
           pictures.fileList_Regulation.push(item)
-          break
-        default:
-          pictures.fileList_QualityAnalysis.push(item)
-
+          break;
       }
     })
     this.setState({
@@ -100,7 +95,7 @@ componentWillReceiveProps(nextProps) {
     const {form, type, form: {
         getFieldDecorator
       }, loading } = this.props;
-    const { pictures: {fileList_DFMEA, fileList_DesignCode, fileList_Trade, fileList_Regulation, fileList_QualityAnalysis} } = this.state
+    const { pictures: {fileList_DFMEA, fileList_DesignCode, fileList_Trade, fileList_Regulation} } = this.state
 
     return (
       <div name="车身系统">
@@ -121,9 +116,10 @@ componentWillReceiveProps(nextProps) {
               />
             )}
             <span style={{
-              color: 'RGB(143,143,143)'
+              color: 'RGB(143,143,143)',
+              whiteSpace:'nowrap'
             }}
-            >支持扩展名：doc .docx .pdf</span>
+            >支持扩展名：.doc .docx .docm .xls .xlsx .xlsm .pdf .ppt .pptx</span>
           </FormItem>
           <FormItem {...formItemLayout2}
               label="设计规范报告"
@@ -141,9 +137,10 @@ componentWillReceiveProps(nextProps) {
               />
             )}
             <span style={{
-              color: 'RGB(143,143,143)'
+              color: 'RGB(143,143,143)',
+              whiteSpace:'nowrap'
             }}
-            >支持扩展名：doc .docx .pdf</span>
+            >支持扩展名：.doc .docx .docm .xls .xlsx .xlsm .pdf .ppt .pptx</span>
           </FormItem>
           <FormItem {...formItemLayout2}
               label={type === 1 ? '行业趋势报告' : '型谱'}
@@ -161,9 +158,10 @@ componentWillReceiveProps(nextProps) {
               />
             )}
             <span style={{
-              color: 'RGB(143,143,143)'
+              color: 'RGB(143,143,143)',
+              whiteSpace:'nowrap'
             }}
-            >支持扩展名：doc .docx .pdf</span>
+            >支持扩展名：.doc .docx .docm .xls .xlsx .xlsm .pdf .ppt .pptx</span>
           </FormItem>
           <FormItem {...formItemLayout2}
               label="法规标准报告"
@@ -180,30 +178,11 @@ componentWillReceiveProps(nextProps) {
                   type={4}
               />
             )}
-            <span style={{
-              color: 'RGB(143,143,143)'
+           <span style={{
+              color: 'RGB(143,143,143)',
+              whiteSpace:'nowrap'
             }}
-            >支持扩展名：doc .docx .pdf</span>
-          </FormItem>
-          <FormItem {...formItemLayout2}
-              label="质量分析报告"
-          >
-            {getFieldDecorator('fileList_QualityAnalysis', {})(
-              <PicturesWall
-                  acceptType={acceptType}
-                  dataSource={fileList_QualityAnalysis}
-                  form={form}
-                  listType="text"
-                  maxImgLen={12}
-                  name="fileList_QualityAnalysis"
-                  onChange={this.handlePicChange}
-                  type={5}
-              />
-            )}
-            <span style={{
-              color: 'RGB(143,143,143)'
-            }}
-            >支持扩展名：doc .docx .pdf</span>
+           >支持扩展名：.doc .docx .docm .xls .xlsx .xlsm .pdf .ppt .pptx</span>
           </FormItem>
 
             <Row>

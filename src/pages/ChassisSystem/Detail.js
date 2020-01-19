@@ -112,6 +112,10 @@ class ChassisSystemDetail extends Component {
           name: '故障参考信息（类型、平均里程、地域等）',
           value: replaceHtml(item.faultReference)
         })
+        dataSource.push({
+          name: '故障分析报告',
+          files: this.getFiles(item.failureModeAttachment, 1)
+        })
         this.setState({dataSource})
       } else {
         message.error(response.msg)
@@ -120,6 +124,14 @@ class ChassisSystemDetail extends Component {
     dispatch({type: 'chassisSystem/info', payload: {
         id
       }, callback})
+  }
+
+  getFiles = (files) => {
+    let result = []
+    files.map(item => {
+        result.push({name: item.oldFileName, url: item.url})
+    })
+    return result
   }
 
   // 日志查询
@@ -196,7 +208,10 @@ class ChassisSystemDetail extends Component {
       <Fragment>
         <CurrentTitle props={this.props}/>
         <Card className={styles.main}>
-          {dataSource.map((item, index) => < ItemList images={
+          {dataSource.map((item, index) => < ItemList files={
+            item.files
+          }
+              images={
             item.images
           }
               key={

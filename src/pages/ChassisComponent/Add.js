@@ -106,13 +106,18 @@ class ChassisSystemAdd extends Component {
           const system = systemList.filter(item => item.id === response.data.componentId)[0]
           filterSystemList = systemList.filter(item => item.parentId === Number.parseInt(system.parentId))
         }
+
+        if(response.data.influenceFactorPicture.length > 0){
+          this.setState({
+            influenceFactorPicture: formartPicture(response.data.influenceFactorPicture, 2)
+          })
+        }
         this.setState({
           filterSystemList,
           dataSource: response.data,
           picture: response.data.picture,
           reasonsCountermeasuresPhotos: response.data.reasonsCountermeasuresPhotos,
-          standardPrinciplesPhotos: response.data.standardPrinciplesPhotos,
-          influenceFactorPicture: formartPicture(response.data.influenceFactorPicture, 2)
+          standardPrinciplesPhotos: response.data.standardPrinciplesPhotos
         })
       }
     }
@@ -275,7 +280,6 @@ class ChassisSystemAdd extends Component {
     if (name.indexOf('desginItem') >= 0) {
       const {influenceFactorPicture} = this.state
       const index = parseInt(name.replace('desginItem', ''), 10)
-      console.log(fileList)
       influenceFactorPicture[index].pictures = fileList
     } else {
       this.setState({[name]: fileList})

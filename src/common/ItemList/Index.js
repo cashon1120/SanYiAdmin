@@ -62,10 +62,18 @@ class ItemList extends Component {
 }
 
 render() {
-  const {label, text, images, files} = this.props
+  let {label, text, images, files} = this.props
   let noContent = ''
+
+  if(text === ''){
+    noContent = '暂无内容'
+  }
   if (images && images.length === 0) {
     noContent = '暂无图片'
+  }
+  if (images === '暂无内容') {
+    noContent = '暂无内容'
+    images = []
   }
   if (files && files.length === 0) {
     noContent = '暂无附件'

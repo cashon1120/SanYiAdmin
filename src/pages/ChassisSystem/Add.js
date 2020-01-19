@@ -15,8 +15,9 @@ import CurrentTitle from '@/common/CurrentTitle/Index'
 import router from 'umi/router'
 import styles from '../../layouts/global.less'
 import {getUploadedPic, setPictureParams, formartPicture} from '@/utils/utils'
-import {formItemLayout} from '../../../public/config'
+import {formItemLayout, formItemLayout2} from '../../../public/config'
 
+const acceptType = '.doc, .docx, .docm, .xls, .xlsx, .xlsm, .pdf .ppt, .pptx'
 const {TextArea} = Input
 const {Option} = Select
 const defaultPage = {
@@ -37,6 +38,7 @@ class ChassisSystemAdd extends Component {
     faultPicture: [], // 故障现象图片
     reasonsCountermeasuresPhotos: [], // 原因及对策照片
     standardPrinciplesPhotos: [], // 标准原理及照片
+    failureModeAttachment: [], // 故障分析报告
     influenceFactorPicture: [
       {
         remark: '',
@@ -66,13 +68,18 @@ class ChassisSystemAdd extends Component {
     const callback = response => {
       if (response.code === 1) {
         this.filterCoreComponent(response.data.assemblyComponentId, form, response.data.coreComponentId)
+        if(response.data.influenceFactorPicture.length > 0){
+          this.setState({
+            influenceFactorPicture: formartPicture(response.data.influenceFactorPicture)
+          })
+        }
         this.setState({
           dataSource: response.data,
           coreComponentPicture: response.data.coreComponentPicture,
           faultPicture: response.data.faultPicture,
           reasonsCountermeasuresPhotos: response.data.reasonsCountermeasuresPhotos,
           standardPrinciplesPhotos: response.data.standardPrinciplesPhotos,
-          influenceFactorPicture: formartPicture(response.data.influenceFactorPicture)
+          failureModeAttachment: response.data.failureModeAttachment
         })
       }
     }
@@ -142,7 +149,7 @@ class ChassisSystemAdd extends Component {
     e.preventDefault()
     validateFields((err, values) => {
       if (!err) {
-        const {faultPicture, reasonsCountermeasuresPhotos, standardPrinciplesPhotos, influenceFactorPicture} = this.state
+        const {faultPicture, reasonsCountermeasuresPhotos, standardPrinciplesPhotos, influenceFactorPicture, failureModeAttachment} = this.state
         const params = {
           ...values
         }
@@ -151,6 +158,7 @@ class ChassisSystemAdd extends Component {
         params.reasonsCountermeasuresPhotos = getUploadedPic(reasonsCountermeasuresPhotos, 3)
         params.standardPrinciplesPhotos = getUploadedPic(standardPrinciplesPhotos, 4)
         params.influenceFactorPicture = setPictureParams(influenceFactorPicture)
+        params.failureModeAttachment = getUploadedPic(failureModeAttachment, 1)
         // 验证成功跳转到下一步
         this.setState({
           params
@@ -259,7 +267,8 @@ class ChassisSystemAdd extends Component {
       reasonsCountermeasuresPhotos,
       faultPicture,
       standardPrinciplesPhotos,
-      influenceFactorPicture
+      influenceFactorPicture,
+      failureModeAttachment
     } = this.state
     // let disabledSelection = dataSource.version === 1 && dataSource.approvalState
     // === 1
@@ -480,6 +489,27 @@ class ChassisSystemAdd extends Component {
             >
               {getFieldDecorator('faultReference', {initialValue: dataSource.faultReference})(<TextArea rows={4}/>)}
             </Form.Item >
+            <Form.Item {...formItemLayout2}
+                label="故障分析报告"
+            >
+            {getFieldDecorator('fileList_QualityAnalysis', {})(
+              <PicturesWall
+                  acceptType={acceptType}
+                  dataSource={failureModeAttachment}
+                  form={form}
+                  listType="text"
+                  maxImgLen={12}
+                  name="failureModeAttachment"
+                  onChange={this.handlePicChange}
+                  type={5}
+              />
+            )}
+            <span style={{
+              color: 'RGB(143,143,143)',
+              whiteSpace:'nowrap'
+            }}
+            >支持扩展名：.doc .docx .docm .xls .xlsx .xlsm .pdf .ppt .pptx</span>
+          </Form.Item>
             <Row>
               <Col {...formItemLayout.labelCol}></Col>
               <Col {...formItemLayout.wrapperCol}>

@@ -108,6 +108,7 @@ class IndexBanner extends Component {
                   name="picture"
                   onChange={this.handlePicChange}
                  />)}
+                 <div>上传图片宽高: 1920*780 像素</div>
             </Form.Item >
             <Row>
               <Col {...formItemLayout.labelCol}></Col>
